@@ -1,27 +1,37 @@
 # CursoTecnicoSenai
-Mostra as pastas existentes
-dir
+#### excluir credencias existentes na maquina
+```cmdkey /delete:LegacyGeneric:Target=git:https://github.com```
 
-Entra na pasta 
-cd MeuPrimeiroCommit/
+#### Configuram meu nome e seu email para serem usados no commit
+```git config --global user.name "seu nome"```
+```git config --global user.email "seu email"```
 
-Para abrir o VS Code 
-code .
+#### E um utilitário de linha de comando que permite trabalhar no projeto como se estivesse no original
+```git clone https://github.com/fernandastocler/MeuPrimeiroCommit.git```
 
-Verificar os status dos arquivos
-git status
+#### Mostrar as pastas existentes
+```dir```
 
-Para adicionar as alterações para pasta atual
-git add .
+#### Entrar na pasta
+```cd MeuPrimeiroCommit/```
 
-Verificar os status dos arquivos foram adicionados
-git status
+#### Para abrir o VS Code
+```code .```
 
-Criar um commit após adicionar os arquivos
-git commit -m "Alteração do arquivo Readme"
+#### Verificar os status dos arquivos 
+```git status```
 
-Para logar na minha conta do GitHub
-git log
+#### Para adicionar as alterações para pasta atual
+```git add .```
 
-Para enviar para nuvem
-git push
+#### Verificar os status dos arquivos foram adicionados 
+```git status```
+
+#### Criar um commit após adicionar os arquivos 
+```git commit -m "Alteração do arquivo Readme"```
+
+#### Para logar na minha conta do GitHub
+```git log```
+
+#### Para enviar para nuvem
+```git push```
