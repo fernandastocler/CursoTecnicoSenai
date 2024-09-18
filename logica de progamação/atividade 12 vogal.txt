@@ -1,0 +1,20 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Detector de Vogais!");
+        Console.Write("insira a letra:");
+        string vogal = Console.ReadLine();
+
+        if (vogal == "a" || vogal == "e" || vogal == "i" || vogal == "o" || vogal == "u")
+        {
+            Console.WriteLine("Vogal");
+        }
+        else
+        {
+            Console.WriteLine("Consoante");
+        }
+    }
+}

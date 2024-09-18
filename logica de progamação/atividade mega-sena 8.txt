@@ -1,0 +1,75 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Random numero = new Random(); // Cria um gerador de números aleatórios
+        int b; // Declara uma variável para armazenar a quantidade de dezenas
+        
+        // Fase 4: Solicitar o número de dezenas entre 6 e 15
+        do
+        {
+            Console.Write("Quantas dezenas terá seu jogo (entre 6 e 15): "); // Solicita que o usuário insira o valor de dezenas
+            string a = Console.ReadLine(); // Lê a entrada do usuário
+            
+            // Validação para garantir que a entrada é um número válido e dentro do intervalo
+            if (!int.TryParse(a, out b) || b < 6 || b > 15)
+            {
+                Console.WriteLine("Número inválido! Por favor, tente informar um número novamente entre 6 e 15."); // Mensagem de erro
+            }
+        } while (b < 6 || b > 15);
+
+        // Fase 3: Solicitar a quantidade de jogos
+        int c;
+        do
+        {
+            Console.Write("Quantos jogos serão: "); // Solicita a quantidade de jogos
+            string jogo = Console.ReadLine(); // Lê a entrada do usuário
+            
+            // Validação para garantir que a entrada é um número válido
+            if (!int.TryParse(jogo, out c) || c <= 0)
+            {
+                Console.WriteLine("Número inválido! Por favor, tente informar o número novamente."); // Mensagem de erro
+            }
+        } while (c <= 0);
+
+        // Geração dos jogos e números aleatórios
+        for (int k = 1; k <= c; k++)
+        {
+            Console.WriteLine($"\n\nJogo de número {k}:"); // Exibe o número do jogo
+            for (int i = 1; i <= b; i++) // Exibe as dezenas
+            {
+                int valor = numero.Next(1, 60); // Gera número aleatório entre 1 e 60
+                if (i == b)
+                    Console.Write($"{valor:D2}"); // Exibe o último número sem o "-"
+                else
+                    Console.Write($"{valor:D2}-"); // Exibe os outros números com o "-"
+            }
+        }
+
+        // Fase 6: Solicitar que o usuário informe o valor do prêmio
+        double premio;
+        do
+        {
+            Console.Write("\n\nInforme o valor do prêmio: "); // Solicita o valor do prêmio
+            string premioStr = Console.ReadLine(); // Lê a entrada do usuário
+            
+            // Validação para garantir que a entrada é um número válido
+            if (!double.TryParse(premioStr, out premio) || premio <= 0)
+            {
+                Console.WriteLine("Número inválido! Por favor, tente informar o número novamente."); // Mensagem de erro
+            }
+        } while (premio <= 0);
+
+        // Fase 7: Calcular e distribuir o prêmio
+        double premio6Dezenas = premio * 0.75; // Calcula 75% do prêmio total
+        double premio5Dezenas = premio * 0.15; // Calcula 15% do prêmio total
+        double premio4Dezenas = premio * 0.10; // Calcula 10% do prêmio total
+        
+        Console.WriteLine($"\nDistribuição do prêmio:");
+        Console.WriteLine($"75% para quem acertar 6 dezenas: R$ {premio6Dezenas:F2}"); // Exibe o valor correspondente a 75% do prêmio
+        Console.WriteLine($"15% para quem acertar 5 dezenas: R$ {premio5Dezenas:F2}"); // Exibe o valor correspondente a 15% do prêmio
+        Console.WriteLine($"10% para quem acertar 4 dezenas: R$ {premio4Dezenas:F2}"); // Exibe o valor correspondente a 10% do prêmio
+    }
+}

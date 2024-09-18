@@ -1,0 +1,59 @@
+programa {
+  funcao inicio() {
+    logico boiaa, boiab, boiac
+    logico valvulaligada = falso
+
+  escreva("Digite o estado da Boia A (verdadeiro = aberta, falso = fechada): ")
+  leia(boiaa)
+
+  escreva("Digite o estado da Boia B (verdadeiro = aberta, falso = fechada): ")
+  leia(boiab)
+  
+  escreva("Digite o estado da Boia C (verdadeiro = aberta, falso = fechada): ")
+  leia(boiac)
+
+  se (boiaa == falso e boiab == falso) {
+  escreva("Desligar a bomba\n")
+  escreva("Ligar válvula\n")
+    
+    } senao {
+  se (boiaa == verdadeiro) {
+  se (boiab == falso) {
+  se (boiac == falso) {
+  escreva("Ligar válvula\n")
+  escreva("Ligar bomba\n")
+  valvulaligada = verdadeiro
+  
+  } senao {
+  escreva("Ligar válvula\n")
+  escreva("Desligar bomba\n")
+  valvulaligada = verdadeiro
+  }
+  
+  } senao {
+  se (boiac == falso) {
+  escreva("Desligar válvula\n")
+  escreva("Ligar bomba\n")
+  valvulaligada = falso
+  
+  } senao {
+  escreva("Desligar válvula\n")
+  escreva("Desligar bomba\n")
+  valvulaligada = falso
+  }
+  }
+
+
+  }
+
+  se (valvulaligada == verdadeiro) {
+  escreva("A válvula está ligada\n")
+  
+  } senao {
+   escreva("Falha na válvula\n")
+    escreva("Falha na bomba\n")
+  }
+}
+  
+  }
+}

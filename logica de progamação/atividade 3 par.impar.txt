@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+{
+		
+		Console.Write("Digite um número: ");
+		
+//Lê a entrada do usuário e tentar converter para um número inteiro
+	    if (int.TryParse(Console.ReadLine(), out int numero))
+	{
+//Verificar se o número é par ou ímpar
+		if (numero % 2 == 0)
+		{
+			Console.WriteLine($"O número {numero} é par");
+		}
+		else
+		{
+			Console.WriteLine($"O número {numero} é ímpar");
+		}
+}			
+else
+{
+//Informar que a entrada não é valida
+	        Console.WriteLine("Por favor, insira um número inteiro válido");
+}
+	}
+}

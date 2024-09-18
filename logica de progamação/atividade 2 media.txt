@@ -1,0 +1,40 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Informar a nota 1: ");
+		string texto1 = Console.ReadLine();
+		int nota1 =  int.Parse(texto1);
+		
+		Console.WriteLine("Informar a nota 2: ");
+		string texto2 = Console.ReadLine();
+		int nota2 =  int.Parse(texto2);
+		
+		Console.WriteLine("Informar a nota 3: ");
+		string texto3 = Console.ReadLine();
+		int nota3 =  int.Parse(texto3);
+		
+		Console.WriteLine("Informar a nota 4: ");
+		string texto4 = Console.ReadLine();
+		int nota4 =  int.Parse(texto4);
+		
+		double media = (nota1 + nota2 + nota3 + nota4) / 4.0;
+		Console.WriteLine("A media é: " + media );
+		if (media >=60)
+		{
+			Console.WriteLine("Aprovado");
+		}
+		
+		else if (media >=40)
+		{
+			Console.WriteLine("Recuperação");
+		}
+		
+		else
+		{
+			Console.WriteLine("Reprovado");
+		}
+	}
+}
